@@ -1,4 +1,4 @@
-export function Card({ color, number }: { color: string, number: number }) {
+export function Card({ color, number }: { color: string, number: string }) {
   return (
     <>
       <style
@@ -12,6 +12,7 @@ export function Card({ color, number }: { color: string, number: number }) {
             display: flex;
             justify-content: center;
             align-items: center;
+            margin: 0 5px;
 
           }
           .number {
@@ -19,6 +20,7 @@ export function Card({ color, number }: { color: string, number: number }) {
             font-weight: bold;
             text-align: center;
             margin: 0;
+            font-family: 'Roboto', sans-serif;
           }
           .trefle,
           .pique {

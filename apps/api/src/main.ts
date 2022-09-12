@@ -1,17 +1,15 @@
-import { WebSocketServer } from 'ws'
+import express from 'express'
+import { Server } from 'socket.io'
+import * as http from 'http'
 
 const PORT = 8080
 
-const start = () => {
-  const wss = new WebSocketServer({
-    port: PORT
-  })
+const app = express()
+const server = http.createServer(app)
+const io = new Server(server)
 
-  wss.on('connection', ws => {
-    ws.on('message', data => {
-      console.log(`received data: ${data}`)
-    })
-  })
-}
+io.on('connection', () => {
+  console.log('a user connected')
+})
 
-start()
+server.listen(PORT, () => console.log(`Server listening on *:${PORT}`))

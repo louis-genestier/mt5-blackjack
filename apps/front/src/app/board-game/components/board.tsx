@@ -10,9 +10,9 @@ export const Board = () => {
     <BoardWrapper> 
         <Seat score={19} cards={cards} isDealer />
       <PlayerPart>
-        <Seat score={19} cards={cards} gender={'male'} name={'Claude'}/>
-        <Seat score={19} cards={cards} gender={'female'} name={'Claudette'}/>
-        <Seat score={19} cards={cards} gender={'female'} name={'Claudette'}/>
+        <Seat tokenValue={10} score={12} cards={cards} gender={'male'} name={'Claude'}/>
+        <Seat tokenValue={10} score={14} cards={cards} gender={'female'} name={'Claudette'}/>
+        <Seat tokenValue={15} score={19} cards={cards} gender={'female'} name={'Chloé'}/>
       </PlayerPart>
     </BoardWrapper>
   )

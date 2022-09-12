@@ -11,10 +11,11 @@ type Props = {
 	isSelected?: boolean
 	name?: string
 	score: number,
-	cards: CardName[]
+	cards: CardName[],
+	tokenValue?: number
 }
 
-export const Seat = ({ isDealer, gender, isSelected, name, score, cards }: Props) => {
+export const Seat = ({ isDealer, gender, isSelected, name, score, cards, tokenValue }: Props) => {
   return (
 		<StyledDealerSeat isDealer={isDealer}>
 			<Score isDealer={isDealer}>{score}</Score>
@@ -25,7 +26,7 @@ export const Seat = ({ isDealer, gender, isSelected, name, score, cards }: Props
 			{!isDealer && 
 			<div>
 				<TokenImage src={token} alt=''/>
-				<TokenContent>19</TokenContent>
+				<TokenContent>{tokenValue}€</TokenContent>
 			</div>}
 				<CharacterCard name={name} isDealer={isDealer} gender={gender} isSelected={isSelected} />
 			</Userinfo>
@@ -40,7 +41,7 @@ const TokenContent = styled.p`
 	position: absolute;
 	font-size: 21px;
 	color: white;
-	transform: translateX(38px) translateY(-80px);
+	transform: translateX(30px) translateY(-83px);
 `
 
 const Userinfo = styled.div`
